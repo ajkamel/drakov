@@ -183,6 +183,17 @@ In cases where strict HTTP headers matching against API blueprints is not necess
 
 `drakov -f "../com/foo/contracts/*.md" --ignoreHeader Cookie --ignoreHeader Authorization`
 
+## Add Basepath to Routes
+
+You may want Drakov to use a custom basepath when handling your specified routes. For example, if you're using multiple Blueprint files, you may want to namespace the routes in a given Blueprint with a service name. You can do this by adding a custom metadata key-value in your Blueprint file and passing the key name to the `--basePathKey` argument:
+
+FORMAT: 1A
+
+SERVICE: serviceName
+
+`drakov -f "../com/foo/contracts/*.md" --basePathKey SERVICE `
+
+
 ## Using as a Node.js module
 
     var drakov = require('drakov');
